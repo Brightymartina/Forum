@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Event</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .btn,
+        .panel-primary {
+            border-radius: 0;
+        }
+
+        .panel-title {
+            background: no-repeat;
+        }
+    </style>
+</head>
+
+<body onload="validatekey()">
+    <div class="container">
+        <form id="eventform">
+            <div>
+                <h3 style="font-size: 18px;">Add new Event</h3>
+                <button id="btndone" class="btn btn-default pull-right"><i class="fa fa-file-text" aria-hidden="true"></i> Save</button>
+            </div>
+            </br>
+            <div class="form-group">
+                <label for="eventname">EVENT NAME :</label>
+                <input class="form-control" id="eventname" type="text" required>
+            </div>
+            <div class="form-group">
+                <label for="eventdate">EVENT DATE :</label>
+                <input class="form-control" type="date" id="eventdate" required>
+            </div>
+            <div class="form-group">
+                <label for="eventstatus">EVENT STATUS :</label>
+                <input class="form-control" id="eventstatus" type="text" required>
+            </div>
+            <div class="form-group">
+                <label for="eventlocation">LOCATION :</label>
+                <input class="form-control" id="eventlocation" type="text" required>
+            </div>
+        </form>
+
+        <form id="agendaform">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel panel-title"><a data-toggle="collapse" href="#agendas"><kbd>Click Here</kbd></a> to fill Agenda's</h4>
+                    </div>
+                    <div id="agendas" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="agendatime">AGENDA TIME :</label>
+                                <input class="form-control" id="agendatime" type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="agendadesc">AGENDA DESC :</label>
+                                <input class="form-control" id="agendadesc" type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="agendainstruction">AGENDA INSTRUCTION :</label>
+                                <input class="form-control" id="agendainstruction" type="text" required>
+                            </div>
+                            <div>
+                                <table class="table" id="agendadatas">
+                                    <thead>
+                                        <tr>
+                                            <th>AGENDATIME</th>
+                                            <th>AGENDADESC</th>
+                                            <th>AGENDAINSTRUCTION</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="panel-footer"><button id="btnadd" class="btn btn-default"><i class="fa fa-plus-square" aria-hidden="true"></i> Add Agenda!</button></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="crud.controller.js"></script>
+    <script src="event.controller.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>
